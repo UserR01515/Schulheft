@@ -50,6 +50,7 @@ if psw == "192837465":
                                                                 )
         if m_auswahl == "Taschenrechner": 
             st.write(":blue-background[:blue[Taschenrechner]]")
+            st.write("1 = Wurzel, Potenz   2 = Addieren, Subtrahieren, Multiplizieren, Dividieren")
             eingabe_auswahl = st.pills("Wie viele Zahlen brauchst du zum berechnen? ", ["1", "2"])
             if eingabe_auswahl == "2":
                 zahl_1 = st.number_input("Wie lautet deine erste Zahl? ")
