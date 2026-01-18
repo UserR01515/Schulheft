@@ -358,7 +358,7 @@ if psw == "192837465":
             st.page_link("https://www.deepl.com/de/translator", label="Übersetzer", icon="📃")
 #Geschichte
     elif auswahl == "Geschichte":
-        st.header("Geschichter")
+        st.header("Geschichte")
         eingabe = st.pills("Wähle aus was du machen willst", ["Planet-Wissen-Geschichte", "Aufgabenheft", "Hefteintrag", "Wikipedia"])
         if eingabe == "Planet-Wissen-Geschichte":
             st.page_link("https://www.planet-wissen.de/geschichte/index.html", label="Planet-Wissen-Geschichte", icon="🌍")
