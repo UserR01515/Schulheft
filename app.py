@@ -683,14 +683,14 @@ if psw == "192837465":
                 con = sqlite3.connect("Periodensystem")
                 cur = con.cursor()
                 cur.execute("CREATE TABLE IF NOT EXISTS Borgruppe(Ordnungszahl, Symbol, Name, Atomare Masse)")
-                #borgruppe = [
-                 #   (5, "B", "boron", 10.81),
-                  #  (13, "Al", "aluminium", 26.9815385),
-                   # (31, "Ga", "gallium", 69.723),
-                    #(49, "In", "indium", 114.818),
-                    #(81, "Tl", "thallium", 204.38)
-                #]
-                #cur.executemany("INSERT INTO Borgruppe VALUES(?, ?, ? ,?)", borgruppe)
+                borgruppe = [
+                   (5, "B", "boron", 10.81),
+                   (13, "Al", "aluminium", 26.9815385),
+                   (31, "Ga", "gallium", 69.723),
+                   (49, "In", "indium", 114.818),
+                   (81, "Tl", "thallium", 204.38)
+                ]
+                cur.executemany("INSERT INTO Borgruppe VALUES(?, ?, ? ,?)", borgruppe)
                 dt = cur.execute("SELECT DISTINCT* FROM Borgruppe")
                 st.write(dt)
                 con.commit()
