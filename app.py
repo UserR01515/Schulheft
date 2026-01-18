@@ -683,14 +683,14 @@ if psw == "192837465":
                 con = sqlite3.connect("Periodensystem")
                 cur = con.cursor()
                 cur.execute("CREATE TABLE IF NOT EXISTS Borgruppe(Ordnungszahl, Symbol, Name, Atomare Masse)")
-                borgruppe = [
-                   (5, "B", "boron", 10.81),
-                   (13, "Al", "aluminium", 26.9815385),
-                   (31, "Ga", "gallium", 69.723),
-                   (49, "In", "indium", 114.818),
-                   (81, "Tl", "thallium", 204.38)
-                ]
-                cur.executemany("INSERT INTO Borgruppe VALUES(?, ?, ? ,?)", borgruppe)
+                #borgruppe = [
+                 #  (5, "B", "boron", 10.81),
+                  # (13, "Al", "aluminium", 26.9815385),
+                   #(31, "Ga", "gallium", 69.723),
+                   #(49, "In", "indium", 114.818),
+                   #(81, "Tl", "thallium", 204.38)
+                #]
+                #cur.executemany("INSERT INTO Borgruppe VALUES(?, ?, ? ,?)", borgruppe)
                 dt = cur.execute("SELECT DISTINCT* FROM Borgruppe")
                 st.write(dt)
                 con.commit()
@@ -700,14 +700,14 @@ if psw == "192837465":
                 con = sqlite3.connect("Periodensystem")
                 cur = con.cursor()
                 cur.execute("CREATE TABLE IF NOT EXISTS Kohlenstoffgruppe(Ordnungszahl, Symbol, Name, Atomare Masse)")
-                #kohlenstoffgruppe = [
-                 #   (6, "C", "carbon", 12.011),
-                  #  (14, "Si", "silicon", 28.085),
-                   # (32, "Ge", "germanium", 72.63),
-                    #(50, "Sn", "tin", 118.71),
-                    #(82, "Pb", "lead", 207.2)
-                #]
-                #cur.executemany("INSERT INTO Kohlenstoffgruppe VALUES(?, ?, ? ,?)", kohlenstoffgruppe)
+                kohlenstoffgruppe = [
+                   (6, "C", "carbon", 12.011),
+                   (14, "Si", "silicon", 28.085),
+                   (32, "Ge", "germanium", 72.63),
+                   (50, "Sn", "tin", 118.71),
+                   (82, "Pb", "lead", 207.2)
+                ]
+                cur.executemany("INSERT INTO Kohlenstoffgruppe VALUES(?, ?, ? ,?)", kohlenstoffgruppe)
                 dt = cur.execute("SELECT DISTINCT * FROM Kohlenstoffgruppe")
                 st.write(dt)
                 con.commit()
@@ -717,14 +717,14 @@ if psw == "192837465":
                 con = sqlite3.connect("Periodensystem")
                 cur = con.cursor()
                 cur.execute("CREATE TABLE IF NOT EXISTS Stickstoffgruppe(Ordnungszahl, Symbol, Name, Atomare Masse)")
-                #stickstoffgruppe = [
-                 #   (7, "N", "nitrogen", 14.007),
-                  #  (15, "P", "phosphorus", 30.973761998),
-                   # (33, "As", "arsenic", 74.921595),
-                    #(51, "Sb", "antimony", 121.76),
-                    #(83, "Bi", "bismuth", 208.9804)
-                #]
-                #cur.executemany("INSERT INTO Stickstoffgruppe VALUES(?, ?, ? ,?)", stickstoffgruppe)
+                stickstoffgruppe = [
+                   (7, "N", "nitrogen", 14.007),
+                   (15, "P", "phosphorus", 30.973761998),
+                   (33, "As", "arsenic", 74.921595),
+                   (51, "Sb", "antimony", 121.76),
+                   (83, "Bi", "bismuth", 208.9804)
+                ]
+                cur.executemany("INSERT INTO Stickstoffgruppe VALUES(?, ?, ? ,?)", stickstoffgruppe)
                 dt = cur.execute("SELECT DISTINCT * FROM Stickstoffgruppe")
                 st.write(dt)
                 con.commit()
@@ -734,14 +734,14 @@ if psw == "192837465":
                 con = sqlite3.connect("Periodensystem")
                 cur = con.cursor()
                 cur.execute("CREATE TABLE IF NOT EXISTS Chalkogene(Ordnungszahl, Symbol, Name, Atomare Masse)")
-                #chalkogene = [
-                 #   (8, "O", "oxygen", 15.999),
-                  #  (16, "S", "sulfur", 32.06),
-                   # (34, "Se", "selenium", 78.971),
-                    #(52, "Te", "tellurium", 127.6),
-                    #(84, "Po", "polonium", 209)
-                #]
-                #cur.executemany("INSERT INTO Chalkogene VALUES(?, ?, ? ,?)", chalkogene)
+                chalkogene = [
+                   (8, "O", "oxygen", 15.999),
+                   (16, "S", "sulfur", 32.06),
+                   (34, "Se", "selenium", 78.971),
+                   (52, "Te", "tellurium", 127.6),
+                   (84, "Po", "polonium", 209)
+                ]
+                cur.executemany("INSERT INTO Chalkogene VALUES(?, ?, ? ,?)", chalkogene)
                 dt = cur.execute("SELECT DISTINCT* FROM Chalkogene")
                 st.write(dt)
                 con.commit()
@@ -751,14 +751,14 @@ if psw == "192837465":
                 con = sqlite3.connect("Periodensystem")
                 cur = con.cursor()
                 cur.execute("CREATE TABLE IF NOT EXISTS Halogene(Ordnungszahl, Symbol, Name, Atomare Masse)")
-                #halogene = [
-                 #   (9, "F", "fluorine", 18.998403163),
-                  #  (17, "Cl", "chlorine", 35.45),
-                   # (35, "Br", "bromine", 79.904),
-                    #(53, "I", "iodine", 126.90447),
-                    #(85, "At", "astatine", 210)
-                #]
-                #cur.executemany("INSERT INTO Halogene VALUES(?, ?, ? ,?)", halogene)
+                halogene = [
+                   (9, "F", "fluorine", 18.998403163),
+                   (17, "Cl", "chlorine", 35.45),
+                   (35, "Br", "bromine", 79.904),
+                   (53, "I", "iodine", 126.90447),
+                   (85, "At", "astatine", 210)
+                ]
+                cur.executemany("INSERT INTO Halogene VALUES(?, ?, ? ,?)", halogene)
                 dt = cur.execute("SELECT DISTINCT * FROM Halogene")
                 st.write(dt)
                 con.commit()
