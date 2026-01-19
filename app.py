@@ -52,9 +52,9 @@ if psw == "192837465":
                     con.commit()
                     st.table(data)
             elif eingabe == "Ideen anzeigen":
-                   data = cur.execute("SELECT * FROM Ideen")
-                   con.commit()
-                   st.table(data)
+                data = cur.execute("SELECT * FROM Ideen")
+                con.commit()
+                st.table(data)
             elif eingabe == "Idee löschen":
                 idee_löschen = cur.execute("SELECT datum FROM Hefteintrag_mathe")
                 auswahl_idee_löschen = st.selectbox("Wähle aus welchen Eintrag du löschen möchtest:", idee_löschen)
