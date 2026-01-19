@@ -39,9 +39,9 @@ if psw == "192837465":
         cur.execute("CREATE TABLE IF NOT EXISTS Ideen(Idee)")
         eingabe = st.pills("Wähle aus:", ["Eintrag hinzufügen", "Ideen anzeigen", "Idee löschen"])
         if eingabe == "Eintrag hinzufügen":
-             dta = ["Vorlage", "Vorlage"]
-             cur.execute("INSERT INTO Ideen VALUES(?, ?)", dta)
-             con.commit()
+             #dta = ["Vorlage", "Vorlage"]
+             #cur.execute("INSERT INTO Ideen VALUES(?, ?)", dta)
+             #con.commit()
              eintrag = st.text_input("Gebe hier zuerst einen Titel und dann deine Idee ein:")
             #Eintrag bestätigen
              if st.button("Eintrag bestätigen!"):
