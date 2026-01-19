@@ -1,9 +1,9 @@
 import streamlit as st
 import math
 import sqlite3
+st.balloons()
 psw= st.text_input("Gebe das Passwort ein:")
 if psw == "192837465":
-    st.balloons()
     st.sidebar.title("Schulheft")
     auswahl = st.sidebar.radio("Wähle eine der folgenden Funktionen aus:", ["Mathe", 
                                                                             "Deutsch", 
