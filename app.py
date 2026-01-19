@@ -90,8 +90,8 @@ if psw == "192837465":
                 con.commit()
             
                 
-        elif eingabe == "Ideen anzeigen":
-             daten = cur.execute("SELECT * FROM Ideen")
+        elif eingabe == "Termine anzeigen":
+             daten = cur.execute("SELECT * FROM Termin")
              st.data_editor(daten)
              con.commit()
         
