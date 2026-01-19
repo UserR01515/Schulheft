@@ -15,7 +15,7 @@ if psw == "192837465":
                                                                             "Religion", 
                                                                             "Biologie", 
                                                                             "Terminplaner", 
-                                                                            "Ideen zur Verbesserun"]
+                                                                            "Ideen zur Verbesserung"]
                                                                             )
     
     Link = st.sidebar.button("Links")
