@@ -41,24 +41,24 @@ if psw == "192837465":
             # dta = ["Vorlage", "Vorlage"]
             # cur.execute("INSERT INTO Hefteintrag_mathe VALUES(?, ?)", dta)
             # con.commit()
-            eintrag = st.sidebar.text_input("Gebe hier zuerst einen Titel und dann deine Idee ein:")
+            eintrag = st.text_input("Gebe hier zuerst einen Titel und dann deine Idee ein:")
             #Eintrag bestätigen
             if st.button("Eintrag bestätigen!"):
                 cur.execute(f"INSERT INTO Ideen VALUES('{eintrag}')")
                 data = cur.execute("SELECT * FROM Ideen")
                 con.commit()
-                st.sidebar.table(data)
+                st.table(data)
         elif eingabe == "Ideen anzeigen":
                 data = cur.execute("SELECT * FROM Ideen")
                 con.commit()
-                st.sidebar.table(data)
+                st.table(data)
         elif eingabe == "Idee löschen":
             idee_löschen = cur.execute("SELECT datum FROM Hefteintrag_mathe")
-            auswahl_idee_löschen = st.sidebar.selectbox("Wähle aus welchen Eintrag du löschen möchtest:", idee_löschen)
+            auswahl_idee_löschen = st.selectbox("Wähle aus welchen Eintrag du löschen möchtest:", idee_löschen)
             if st.button("Auswahl löschen"):
                 cur.execute(f"DELETE FROM Ideen WHERE datum = ('{auswahl_idee_löschen}')")
                 con.commit()
-                st.sidebar.success("Idee wurde gelöscht")
+                st.success("Idee wurde gelöscht")
             
 #Mathe
     if auswahl == "Mathe":
