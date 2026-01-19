@@ -35,20 +35,20 @@ if psw == "192837465":
     if ideen is True: 
         st.sidebar.text_input("Gebe hier deine Idee ein")
         con = sqlite3.connect("Ideen")
-            cur = con.cursor()
-            cur.execute("CREATE TABLE IF NOT EXISTS Ideen(Idee)")
-            eingabe = st.pills("Wähle aus:", ["Eintrag hinzufügen", "Ideen anzeigen", "Idee löschen"])
-            if eingabe == "Eintrag hinzufügen":
-                # dta = ["Vorlage", "Vorlage"]
-                # cur.execute("INSERT INTO Hefteintrag_mathe VALUES(?, ?)", dta)
-                # con.commit()
-                eintrag = st.text_area("Gebe hier zuerst einen Titel und dann deine Idee ein:")
-                #Eintrag bestätigen
-                if st.button("Eintrag bestätigen!"):
-                    cur.execute(f"INSERT INTO Ideen VALUES('{eintrag}')")
-                    data = cur.execute("SELECT * FROM Ideen")
-                    con.commit()
-                    st.table(data)
+        cur = con.cursor()
+        cur.execute("CREATE TABLE IF NOT EXISTS Ideen(Idee)")
+        eingabe = st.sidebar.pills("Wähle aus:", ["Eintrag hinzufügen", "Ideen anzeigen", "Idee löschen"])
+        if eingabe == "Eintrag hinzufügen":
+            # dta = ["Vorlage", "Vorlage"]
+            # cur.execute("INSERT INTO Hefteintrag_mathe VALUES(?, ?)", dta)
+            # con.commit()
+            eintrag = st.sidebar.text_area("Gebe hier zuerst einen Titel und dann deine Idee ein:")
+            #Eintrag bestätigen
+            if st.button("Eintrag bestätigen!"):
+                cur.execute(f"INSERT INTO Ideen VALUES('{eintrag}')")
+                data = cur.execute("SELECT * FROM Ideen")
+                con.commit()
+                st.sidebar.table(data)
         
 #Mathe
     if auswahl == "Mathe":
