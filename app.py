@@ -35,6 +35,7 @@ if psw == "192837465":
 
     st.sidebar.feedback("stars")
     if auswahl == "Ideen zur Verbesserung":
+        st.header("Ideen zur Verbesserung")
         con = sqlite3.connect("Ideen")
         cur = con.cursor()
         cur.execute("CREATE TABLE IF NOT EXISTS Ideen(Idee)")
@@ -64,6 +65,7 @@ if psw == "192837465":
                  con.commit()
                  st.success("Idee wurde gelöscht")
     elif auswahl == "Terminplaner":
+        st.header("Terminplaner")
         con = sqlite3.connect("Terminplaner")
         cur = con.cursor()
         cur.execute("CREATE TABLE IF NOT EXISTS Terminplaner(Datum, Betreff)")
