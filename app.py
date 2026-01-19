@@ -1245,6 +1245,7 @@ if psw == "192837465":
       cur = con.cursor()
       cur.execute("CREATE TABLE IF NOT EXISTS Anmeldugn(name, passwort)")
       ausw = st.pills("Wähle aus:", ["Neuen Account erstellen", "Anmelden"])
+      st.write(ausw)
       if ausw == "Neuen Account erstellen":
           name = st.text_input("Gebe deinen richtigen Namen ein:")
           psd = st.text_input("Gebe dein Passwort ein:")
