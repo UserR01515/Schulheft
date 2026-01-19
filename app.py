@@ -49,11 +49,11 @@ if psw == "192837465":
                  cur.execute(f"INSERT INTO Ideen VALUES('{eintrag}')")
                  data = cur.execute("SELECT * FROM Ideen")
                  con.commit()
-                 st.table(data)
+                 st.data_editor(data)
                 
         elif eingabe == "Ideen anzeigen":
              daten = cur.execute("SELECT * FROM Ideen")
-             st.write(daten)
+             st.data_editor(daten)
              con.commit()
                 
         elif eingabe == "Idee löschen":
@@ -137,7 +137,7 @@ if psw == "192837465":
                     con.commit()
             elif eingabe == "Hefteinträge anzeigen":
                 dt = cur.execute("SELECT * FROM Hefteintrag_mathe")
-                st.write(dt)
+                st.data_editor(dt)
                 con.commit()
         
         elif m_auswahl == "Notizheft":
@@ -157,7 +157,7 @@ if psw == "192837465":
                     cur.execute(f"INSERT INTO Notizheft_mathe VALUES('{datum}', '{eintrag}')")
                     data = cur.execute("SELECT * FROM Notizheft_mathe")
                     con.commit()
-                    st.table(data)
+                    st.data_editor(data)
             
             elif eingabe == "Datum löschen":
                 #Eintrag löschen
@@ -168,7 +168,7 @@ if psw == "192837465":
                     con.commit()
             elif eingabe == "Notizheft anzeigen":
                 dt = cur.execute("SELECT * FROM Notizheft_mathe")
-                st.write(dt)
+                st.data_editor(dt)
                 con.commit()
 
         elif m_auswahl == "Aufgabenheft":
@@ -188,7 +188,7 @@ if psw == "192837465":
                     cur.execute(f"INSERT INTO Aufgabenheft_mathe VALUES('{datum}', '{eintrag}')")
                     data = cur.execute("SELECT * FROM Aufgabenheft_mathe")
                     con.commit()
-                    st.table(data)
+                    st.data_editor(data)
             
             elif eingabe == "Datum löschen":
                 #Eintrag löschen
@@ -199,7 +199,7 @@ if psw == "192837465":
                     con.commit()
             elif eingabe == "Aufgabenheft anzeigen":
                 dt = cur.execute("SELECT * FROM Aufgabenheft_mathe")
-                st.write(dt)
+                st.data_editor(dt)
                 con.commit()
 #Deutsch
     elif auswahl == "Deutsch":
@@ -222,7 +222,7 @@ if psw == "192837465":
                     cur.execute(f"INSERT INTO Notizheft_deutsch VALUES('{datum}', '{eintrag}')")
                     data = cur.execute("SELECT * FROM Notizheft_deutsch")
                     con.commit()
-                    st.table(data)
+                    st.data_editor(data)
             
             elif eingabe1 == "Datum löschen":
                 #Eintrag löschen
@@ -233,7 +233,7 @@ if psw == "192837465":
                     con.commit()
             elif eingabe1 == "Notizheft anzeigen":
                 dt = cur.execute("SELECT * FROM Notizheft_deutsch")
-                st.write(dt)
+                st.data_editor(dt)
                 con.commit()
         
         elif eingabe == "Hefteintrag":
@@ -253,7 +253,7 @@ if psw == "192837465":
                     cur.execute(f"INSERT INTO Hefteintrag_deutsch VALUES('{datum}', '{eintrag}')")
                     data = cur.execute("SELECT * FROM Hefteintrag_deutsch")
                     con.commit()
-                    st.table(data)
+                    st.data_editor(data)
             
             elif eingabe == "Datum löschen":
                 #Eintrag löschen
@@ -264,7 +264,7 @@ if psw == "192837465":
                     con.commit()
             elif eingabe == "Hefteinträge anzeigen":
                 dt = cur.execute("SELECT * FROM Hefteintrag_deutsch")
-                st.write(dt)
+                st.data_editor(dt)
                 con.commit()
 
         elif eingabe == "Aufsatz schreiben":
@@ -284,7 +284,7 @@ if psw == "192837465":
                     cur.execute(f"INSERT INTO Aufsatz_dt VALUES('{datum}', '{eintrag}')")
                     data = cur.execute("SELECT * FROM Aufsatz_dt")
                     con.commit()
-                    st.table(data)
+                    st.data_editor(data)
             
             elif eingabe == "Datum löschen":
                 #Eintrag löschen
@@ -295,7 +295,7 @@ if psw == "192837465":
                     con.commit()
             elif eingabe == "Aufsätze anzeigen":
                 dt = cur.execute("SELECT * FROM Aufsatz_dt")
-                st.write(dt)
+                st.data_editor(dt)
                 con.commit()
 #Französisch
     elif auswahl == "Französisch":
@@ -318,7 +318,7 @@ if psw == "192837465":
                     cur.execute(f"INSERT INTO Notizheft_frz VALUES('{datum}', '{eintrag}')")
                     data = cur.execute("SELECT * FROM Notizheft_frz")
                     con.commit()
-                    st.table(data)
+                    st.data_editor(data)
             
             elif eingabe1 == "Datum löschen":
                 #Eintrag löschen
@@ -329,7 +329,7 @@ if psw == "192837465":
                     con.commit()
             elif eingabe1 == "Notizheft anzeigen":
                 dt = cur.execute("SELECT * FROM Notizheft_frz")
-                st.write(dt)
+                st.data_editor(dt)
                 con.commit()
         
         elif eingabe == "Hefteintrag":
@@ -349,7 +349,7 @@ if psw == "192837465":
                     cur.execute(f"INSERT INTO Hefteintrag_frz VALUES('{datum}', '{eintrag}')")
                     data = cur.execute("SELECT * FROM Hefteintrag_frz")
                     con.commit()
-                    st.table(data)
+                    st.data_editor(data)
             
             elif eingabe == "Datum löschen":
                 #Eintrag löschen
@@ -360,7 +360,7 @@ if psw == "192837465":
                     con.commit()
             elif eingabe == "Hefteinträge anzeigen":
                 dt = cur.execute("SELECT * FROM Hefteintrag_frz")
-                st.write(dt)
+                st.data_editor(dt)
                 con.commit()
 
         elif eingabe == "Vokabeln":
@@ -374,7 +374,7 @@ if psw == "192837465":
                 if st.button("Eintrag bestätigen"):
                     cur.execute(f"INSERT INTO Vokabeln_frz VALUES('{v1}', '{v2}')")
                     dt = cur.execute("SELECT * FROM Vokabeln_frz")
-                    st.write(dt)
+                    st.data_editor(dt)
                     con.commit()
             elif eingabe == "Vokabeln löschen":
                 #Eintrag löschen
@@ -385,7 +385,7 @@ if psw == "192837465":
                     con.commit()
             elif eingabe == "Vokabeln anzeigen":
                 dt = cur.execute("SELECT * FROM Vokabeln_frz")
-                st.write(dt)
+                st.data_editor(dt)
                 con.commit()
 
         elif eingabe == "Übersetzer":
