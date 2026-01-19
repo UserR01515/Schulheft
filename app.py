@@ -33,7 +33,6 @@ if psw == "192837465":
     st.sidebar.feedback("stars")
     ideen = st.sidebar.button("Ideen")
     if ideen is True: 
-        st.sidebar.text_input("Gebe hier deine Idee ein")
         con = sqlite3.connect("Ideen")
         cur = con.cursor()
         cur.execute("CREATE TABLE IF NOT EXISTS Ideen(Idee)")
