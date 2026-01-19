@@ -19,7 +19,7 @@ if psw == "192837465":
                                                                             "Ideen zur Verbesserung"]
                                                                             )
     
-    Link = st.sidebar.button("Links")
+    Link = st.sidebar.toggle("Links")
     if Link is True:
         st.sidebar.page_link("https://auth.bycs.de/realms/bycs/protocol/openid-connect/auth?response_type=code&client_id=portal.bycs-prod-oidc&scope=openid&state=FtVxjx8iQgKJGmYi-M9IfN-5Kb-p1S9exFqVaPXujLo%3D&redirect_uri=https://portal.bycs.de/api/login/oauth2/code/bycs_webportal&nonce=MUX6pVWfXmKOIBpiopAFK3xK1tQbaXSugwQxcM0kOqQ", label="Mebis", icon="Ⓜ️")
         st.sidebar.page_link("https://de.wikipedia.org/wiki/Wiki", label="Wikipedia", icon="📖")
