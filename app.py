@@ -31,7 +31,7 @@ if psw == "192837465":
         st.sidebar.page_link("https://de.serlo.org/", label="SERLO Naturwissenschaften", icon="🔭")
 
     st.sidebar.feedback("stars")
-    ideen = st.siderbar.button("Ideen")
+    ideen = st.sidebar.button("Ideen")
     if ideen is True: 
         st.sidebar.text_input("Gebe hier deine Idee ein")
         con = sqlite3.connect("Ideen")
