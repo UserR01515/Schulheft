@@ -1239,13 +1239,11 @@ def schulheft():
 psw= st.text_input("Gebe das Passwort ein:")
 if psw == "192837465":
   st.write("Bitte melde dich an bevor du weitermachst!")
-  anmelden = st.button("Anmelden")
-  if anmelden is True:
+  if st.button("Anmelden")
       con = sqlite3.connect("Anmeldung")
       cur = con.cursor()
-      cur.execute("CREATE TABLE IF NOT EXISTS Anmeldugn(name, passwort)")
+      cur.execute("CREATE TABLE IF NOT EXISTS Anmeldung(name, passwort)")
       ausw = st.pills("Wähle aus:", ["Neuen Account erstellen", "Anmelden"])
-      st.write(ausw)
       if ausw == "Neuen Account erstellen":
           name = st.text_input("Gebe deinen richtigen Namen ein:")
           psd = st.text_input("Gebe dein Passwort ein:")
