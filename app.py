@@ -32,10 +32,10 @@ if psw == "192837465":
 
     st.sidebar.feedback("stars")
     ideen = st.sidebar.button("Ideen")
+    con = sqlite3.connect("Ideen")
+    cur = con.cursor()
+    cur.execute("CREATE TABLE IF NOT EXISTS Ideen(Idee)")
     if ideen is True: 
-        con = sqlite3.connect("Ideen")
-        cur = con.cursor()
-        cur.execute("CREATE TABLE IF NOT EXISTS Ideen(Idee)")
         eingabe = st.sidebar.pills("Wähle aus:", ["Eintrag hinzufügen", "Ideen anzeigen", "Idee löschen"])
         if eingabe == "Eintrag hinzufügen":
             # dta = ["Vorlage", "Vorlage"]
