@@ -40,7 +40,7 @@ if psw == "192837465":
         eingabe = st.pills("Wähle aus:", ["Eintrag hinzufügen", "Ideen anzeigen", "Idee löschen"])
         if eingabe == "Eintrag hinzufügen":
              dta = ["Vorlage", "Vorlage"]
-             cur.execute("INSERT INTO Hefteintrag_mathe VALUES(?, ?)", dta)
+             cur.execute("INSERT INTO Ideen VALUES(?, ?)", dta)
              con.commit()
              eintrag = st.text_input("Gebe hier zuerst einen Titel und dann deine Idee ein:")
             #Eintrag bestätigen
