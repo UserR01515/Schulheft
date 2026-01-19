@@ -91,7 +91,7 @@ if psw == "192837465":
             
                 
         elif eingabe == "Termine anzeigen":
-             daten = cur.execute("SELECT * FROM Termin")
+             daten = cur.execute("SELECT * FROM Terminplaner")
              st.data_editor(daten)
              con.commit()
         
