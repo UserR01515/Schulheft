@@ -52,8 +52,8 @@ if psw == "192837465":
                 
         elif eingabe == "Ideen anzeigen":
              daten = cur.execute("SELECT * FROM Ideen")
-             for zeile in daten:
-                 st.write(zeile)
+             st.write(daten)
+             con.commit()
                 
         elif eingabe == "Idee löschen":
              idee_löschen = cur.execute("SELECT datum FROM Hefteintrag_mathe")
