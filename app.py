@@ -118,7 +118,7 @@ if psw == "192837465":
             b = cur.execute("SELECT * FROM Chat")
             a = st.selectbox("Wähle aus welche Nachricht du löschen möchtest", b)
             if st.button("Nachricht löschen"):
-                cur.execute("DELETE FROM Chat WHERE Nachricht = '{a}'")
+                cur.execute(f"DELETE FROM Chat WHERE Nachricht = '{a}'")
                 con.commit()
             
                 
