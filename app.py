@@ -1257,10 +1257,10 @@ if psw == "192837465":
                     schulheft()
         elif ausw == "Anmelden":
             st.text_input("Name:")
-                b = st.text_input("Passwort:")
-                c = cur.execute(f"SELECT name FROM Anmeldung WHERE passwort = '{b}'")
-                if c is True:
-                    schulheft()
+            b = st.text_input("Passwort:")
+            c = cur.execute(f"SELECT name FROM Anmeldung WHERE passwort = '{b}'")
+            if c is True:
+                schulheft()
             
                         
                        
