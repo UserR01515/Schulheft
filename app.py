@@ -39,7 +39,7 @@ if psw == "192837465":
         cur = con.cursor()
         cur.execute("CREATE TABLE IF NOT EXISTS Ideen(Idee)")
         if ideen is True: 
-           eingabe = st.sidebar.pills("Wähle aus:", ["Eintrag hinzufügen", "Ideen anzeigen", "Idee löschen"])
+           eingabe = st.pills("Wähle aus:", ["Eintrag hinzufügen", "Ideen anzeigen", "Idee löschen"])
            if eingabe == "Eintrag hinzufügen":
                 dta = ["Vorlage", "Vorlage"]
                 cur.execute("INSERT INTO Hefteintrag_mathe VALUES(?, ?)", dta)
