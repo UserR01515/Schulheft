@@ -30,7 +30,7 @@ if psw == "192837465":
         st.sidebar.page_link("https://www.geogebra.org/classic", label="GeoGebra Classic", icon="📈")
         st.sidebar.page_link("https://de.serlo.org/", label="SERLO Naturwissenschaften", icon="🔭")
 
-    st.feedback("Wie findest du diese Website")
+    st.feedback("stars")
 
 #Mathe
     if auswahl == "Mathe":
