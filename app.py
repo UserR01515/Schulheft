@@ -1239,6 +1239,7 @@ def schulheft():
 psw= st.text_input("Gebe das Passwort ein:")
 if psw == "192837465":
   st.write("Bitte melde dich an bevor du weitermachst!")
+  st.write(st.secrets["app_name"]
   if st.button("Anmelden"):
     con = sqlite3.connect("Anmeldung")
     cur = con.cursor()
