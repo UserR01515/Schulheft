@@ -1,7 +1,6 @@
 import streamlit as st
 import math
 import sqlite3
-st.balloons()
 psw= st.text_input("Gebe das Passwort ein:")
 if psw == "192837465":
     st.sidebar.title("Schulheft")
