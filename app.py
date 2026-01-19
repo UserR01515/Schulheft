@@ -112,7 +112,7 @@ if psw == "192837465":
                  cur.execute(f"INSERT INTO Chat VALUES('{eintrag}')")
                  data = cur.execute("SELECT * FROM Chat")
                  con.commit()
-                 st.table(data)
+                 st.write(data)
 
         elif eingabe == "Nachricht löschen":
             b = cur.execute("SELECT * FROM Chat")
