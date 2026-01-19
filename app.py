@@ -45,7 +45,7 @@ if psw == "192837465":
                 cur.execute("INSERT INTO Hefteintrag_mathe VALUES(?, ?)", dta)
                 con.commit()
                 eintrag = st.text_input("Gebe hier zuerst einen Titel und dann deine Idee ein:")
-                Eintrag bestätigen
+                #Eintrag bestätigen
                 if st.button("Eintrag bestätigen!"):
                     cur.execute(f"INSERT INTO Ideen VALUES('{eintrag}')")
                     data = cur.execute("SELECT * FROM Ideen")
