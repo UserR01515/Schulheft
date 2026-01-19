@@ -37,31 +37,31 @@ if psw == "192837465":
         con = sqlite3.connect("Ideen")
         cur = con.cursor()
         cur.execute("CREATE TABLE IF NOT EXISTS Ideen(Idee)")
-       eingabe = st.pills("Wähle aus:", ["Eintrag hinzufügen", "Ideen anzeigen", "Idee löschen"])
-       if eingabe == "Eintrag hinzufügen":
-            dta = ["Vorlage", "Vorlage"]
-            cur.execute("INSERT INTO Hefteintrag_mathe VALUES(?, ?)", dta)
-            con.commit()
-            eintrag = st.text_input("Gebe hier zuerst einen Titel und dann deine Idee ein:")
+        eingabe = st.pills("Wähle aus:", ["Eintrag hinzufügen", "Ideen anzeigen", "Idee löschen"])
+        if eingabe == "Eintrag hinzufügen":
+             dta = ["Vorlage", "Vorlage"]
+             cur.execute("INSERT INTO Hefteintrag_mathe VALUES(?, ?)", dta)
+             con.commit()
+             eintrag = st.text_input("Gebe hier zuerst einen Titel und dann deine Idee ein:")
             #Eintrag bestätigen
-            if st.button("Eintrag bestätigen!"):
-                cur.execute(f"INSERT INTO Ideen VALUES('{eintrag}')")
-                data = cur.execute("SELECT * FROM Ideen")
-                con.commit()
-                st.table(data)
+             if st.button("Eintrag bestätigen!"):
+                 cur.execute(f"INSERT INTO Ideen VALUES('{eintrag}')")
+                 data = cur.execute("SELECT * FROM Ideen")
+                 con.commit()
+                 st.table(data)
                 
         elif eingabe == "Ideen anzeigen":
-            daten = cur.execute("SELECT * FROM Ideen")
-            for zeile in daten:
-                st.write(zeile)
+             daten = cur.execute("SELECT * FROM Ideen")
+             for zeile in daten:
+                 st.write(zeile)
                 
         elif eingabe == "Idee löschen":
-            idee_löschen = cur.execute("SELECT datum FROM Hefteintrag_mathe")
-            auswahl_idee_löschen = st.selectbox("Wähle aus welchen Eintrag du löschen möchtest:", idee_löschen)
-            if st.button("Auswahl löschen"):
-                cur.execute(f"DELETE FROM Ideen WHERE datum = ('{auswahl_idee_löschen}')")
-                con.commit()
-                st.success("Idee wurde gelöscht")
+             idee_löschen = cur.execute("SELECT datum FROM Hefteintrag_mathe")
+             auswahl_idee_löschen = st.selectbox("Wähle aus welchen Eintrag du löschen möchtest:", idee_löschen)
+             if st.button("Auswahl löschen"):
+                 cur.execute(f"DELETE FROM Ideen WHERE datum = ('{auswahl_idee_löschen}')")
+                 con.commit()
+                 st.success("Idee wurde gelöscht")
             
 #Mathe
     elif auswahl == "Mathe":
