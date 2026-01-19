@@ -109,7 +109,7 @@ if psw == "192837465":
              eintrag = st.text_input("Gebe hier deine Nachricht ein:")
             #Eintrag bestätigen
              if st.button("Eintrag bestätigen!"):
-                 cur.execute(f"INSERT INTO Chat VALUES('{eintrag}')
+                 cur.execute(f"INSERT INTO Chat VALUES('{eintrag}')")
                  data = cur.execute("SELECT * FROM Chat")
                  con.commit()
                  st.table(data)
