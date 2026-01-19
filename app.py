@@ -56,7 +56,7 @@ if psw == "192837465":
              con.commit()
                 
         elif eingabe == "Idee löschen":
-             idee_löschen = cur.execute("SELECT datum FROM Ideen")
+             idee_löschen = cur.execute("SELECT Idee FROM Ideen")
              auswahl_idee_löschen = st.selectbox("Wähle aus welchen Eintrag du löschen möchtest:", idee_löschen)
              if st.button("Auswahl löschen"):
                  cur.execute(f"DELETE FROM Ideen WHERE datum = ('{auswahl_idee_löschen}')")
