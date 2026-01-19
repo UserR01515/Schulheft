@@ -81,6 +81,14 @@ if psw == "192837465":
                  data = cur.execute("SELECT * FROM Terminplaner")
                  con.commit()
                  st.data_editor(data)
+
+        elif eingabe == "Termin löschen":
+            b = cur.execute("SELECT * FROM Terminplaner")
+            a = st.selectbox("Wähle aus welchen Termin du löschen möchtest", b)
+            if st.button("Termin löschen"):
+                cur.execute(f"DELETE FROM Terminplaner WHERE Termin = '{a}'")
+                con.commit()
+            
                 
         elif eingabe == "Ideen anzeigen":
              daten = cur.execute("SELECT * FROM Ideen")
