@@ -31,7 +31,25 @@ if psw == "192837465":
         st.sidebar.page_link("https://de.serlo.org/", label="SERLO Naturwissenschaften", icon="🔭")
 
     st.sidebar.feedback("stars")
-
+    ideen = st.siderbar.button("Ideen")
+    if ideen is True: 
+        st.sidebar.text_input("Gebe hier deine Idee ein")
+        con = sqlite3.connect("Ideen")
+            cur = con.cursor()
+            cur.execute("CREATE TABLE IF NOT EXISTS Ideen(Idee)")
+            eingabe = st.pills("Wähle aus:", ["Eintrag hinzufügen", "Ideen anzeigen", "Idee löschen"])
+            if eingabe == "Eintrag hinzufügen":
+                # dta = ["Vorlage", "Vorlage"]
+                # cur.execute("INSERT INTO Hefteintrag_mathe VALUES(?, ?)", dta)
+                # con.commit()
+                eintrag = st.text_area("Gebe hier zuerst einen Titel und dann deine Idee ein:")
+                #Eintrag bestätigen
+                if st.button("Eintrag bestätigen!"):
+                    cur.execute(f"INSERT INTO Ideen VALUES('{eintrag}')")
+                    data = cur.execute("SELECT * FROM Ideen")
+                    con.commit()
+                    st.table(data)
+        
 #Mathe
     if auswahl == "Mathe":
         # Definitionen
@@ -441,7 +459,7 @@ if psw == "192837465":
             eingabe = st.pills("Wähle aus:", ["Eintrag hinzufügen", "Vokabeln löschen", "Vokabeln anzeigen"])
             if eingabe == "Eintrag hinzufügen":
                 v1 = st.text_input("Bitte gebe hier die das deutsche Wort ein:")
-                v2 = st.text_input("Bitte gebe hier das französische Wort ein:")
+                v2 = st.text_input("Bitte gebe hier das englische Wort ein:")
                 if st.button("Eintrag bestätigen"):
                     cur.execute(f"INSERT INTO Vokabeln_eng VALUES('{v1}', '{v2}')")
                     dt = cur.execute("SELECT * FROM Vokabeln_eng")
