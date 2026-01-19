@@ -63,7 +63,29 @@ if psw == "192837465":
                  cur.execute(f"DELETE FROM Ideen WHERE Idee = ('{auswahl_idee_löschen}')")
                  con.commit()
                  st.success("Idee wurde gelöscht")
-            
+    elif auswahl == "Terminplaner":
+        con = sqlite3.connect("Terminplaner")
+        cur = con.cursor()
+        cur.execute("CREATE TABLE IF NOT EXISTS Terminplaner(Datum, Betreff)")
+        eingabe = st.pills("Wähle aus:", ["Eintrag hinzufügen", "Termine anzeigen", "Termin löschen"])
+        if eingabe == "Eintrag hinzufügen":
+             #dta = ["Vorlage", "Vorlage"]
+             #cur.execute("INSERT INTO Ideen VALUES(?, ?)", dta)
+             #con.commit()
+             eintrag1 = st.text_input("Gebe hier das Datum ein:")
+             eintrag2 = st.text_input("Gebe hier den Betreff ein:")
+            #Eintrag bestätigen
+             if st.button("Eintrag bestätigen!"):
+                 cur.execute(f"INSERT INTO Terminplaner VALUES('{eintrag1}', '{eintrag2}')")
+                 data = cur.execute("SELECT * FROM Terminplaner")
+                 con.commit()
+                 st.data_editor(data)
+                
+        elif eingabe == "Ideen anzeigen":
+             daten = cur.execute("SELECT * FROM Ideen")
+             st.data_editor(daten)
+             con.commit()
+        
 #Mathe
     elif auswahl == "Mathe":
         # Definitionen
