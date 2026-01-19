@@ -52,9 +52,7 @@ if psw == "192837465":
                     con.commit()
                     st.table(data)
             elif eingabe == "Ideen anzeigen":
-                cur.execute("SELECT * FROM Ideen")
-                daten = cur.fetchall()
-
+                daten = cur.execute("SELECT * FROM Ideen")
                 for zeile in daten:
                     st.write(zeile)
             elif eingabe == "Idee löschen":
