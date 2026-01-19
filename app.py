@@ -1250,20 +1250,20 @@ if psw == "192837465":
           name = st.text_input("Gebe deinen richtigen Namen ein:")
           psd = st.text_input("Gebe dein Passwort ein:")
           if st.button("Account Erstellung bestätigen"):
-              cur.execute(f"INSERT INTO Anmeldung VALUES('{name}', '{psd}')")
-              st.success("Du hast einen Account erstellt")
-              st.write("Melde dich an:")
-              st.text_input("Name:")
-              b = st.text_input("Passwort:")
-              c = cur.execute(f"SELECT name FROM Anmeldung WHERE passwort = '{b}'")
-              if c is True:
+            cur.execute(f"INSERT INTO Anmeldung VALUES('{name}', '{psd}')")
+            st.success("Du hast einen Account erstellt")
+            st.write("Melde dich an:")
+            st.text_input("Name:")
+            b = st.text_input("Passwort:")
+            c = cur.execute(f"SELECT name FROM Anmeldung WHERE passwort = '{b}'")
+            if c is True:
                   schulheft()
       elif ausw == "Anmelden":
-          st.text_input("Name:")
-          b = st.text_input("Passwort:")
-          c = cur.execute(f"SELECT name FROM Anmeldung WHERE passwort = '{b}'")
-          if c is True:
-              schulheft()
+        st.text_input("Name:")
+        b = st.text_input("Passwort:")
+        c = cur.execute(f"SELECT name FROM Anmeldung WHERE passwort = '{b}'")
+        if c is True:
+            schulheft()
           
                       
                      
