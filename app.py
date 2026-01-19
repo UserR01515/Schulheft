@@ -15,6 +15,7 @@ if psw == "192837465":
                                                                             "Religion", 
                                                                             "Biologie", 
                                                                             "Terminplaner", 
+                                                                            "Chat",
                                                                             "Ideen zur Verbesserung"]
                                                                             )
     
@@ -94,7 +95,39 @@ if psw == "192837465":
              daten = cur.execute("SELECT * FROM Terminplaner")
              st.data_editor(daten)
              con.commit()
+
+#Chat
+    elif auswahl == "Chat":
+        con = sqlite3.connect("Chat")
+        cur = con.cursor()
+        cur.execute("CREATE TABLE IF NOT EXISTS Chat(Nachricht)")
+        eingabe = st.pills("Wähle aus:", ["Nachricht schreiben", "Chat anzeigen", "Nachricht löschen"])
+        if eingabe == "Nachricht schreiben":
+             #dta = ["Vorlage", "Vorlage"]
+             #cur.execute("INSERT INTO Ideen VALUES(?, ?)", dta)
+             #con.commit()
+             eintrag = st.text_input("Gebe hier deine Nachricht ein:")
+            #Eintrag bestätigen
+             if st.button("Eintrag bestätigen!"):
+                 cur.execute(f"INSERT INTO Chat VALUES('{eintrag}')
+                 data = cur.execute("SELECT * FROM Chat")
+                 con.commit()
+                 st.table(data)
+
+        elif eingabe == "Nachricht löschen":
+            b = cur.execute("SELECT * FROM Chat")
+            a = st.selectbox("Wähle aus welche Nachricht du löschen möchtest", b)
+            if st.button("Nachricht löschen"):
+                cur.execute(f"DELETE FROM Chat WHERE Nachricht = '{a}'")
+                con.commit()
+            
+                
+        elif eingabe == "Chat anzeigen":
+             daten = cur.execute("SELECT * FROM Chat")
+             st.table(daten)
+             con.commit()
         
+    
 #Mathe
     elif auswahl == "Mathe":
         # Definitionen
