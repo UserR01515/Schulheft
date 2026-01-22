@@ -700,7 +700,7 @@ def Schulheft():
 #login
 psd = st.text_input("Bitte gebe das Passwort ein:")
 if psd == "192837465":
-    Schulheft()
+    Schulheft() 
     # con = sqlite3.connect("Anmeldung")
     # cur = con.cursor()
     # cur.execute("CREATE TABLE IF NOT EXISTS Anmeldung(Name, Passwort)")
